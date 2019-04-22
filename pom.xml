@@ -14,6 +14,7 @@
 
   <modules>
     <module>spring-cloud-vertex-eureka</module>
+    <module>spring-cloud-vertex-client</module>
   </modules>
 
   <properties>
@@ -21,6 +22,12 @@
     <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
   </properties>
 
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.2.RELEASE</version>
+    <relativePath/>
+  </parent>
   <dependencies>
 
   </dependencies>
