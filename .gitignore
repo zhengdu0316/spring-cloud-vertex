@@ -35,3 +35,12 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
+*/mvnw
+*/mvnw.cmd
+*.iml
+/*.iml
+/.idea/
+.DS_Store
+.idea/
+spring-cloud-vertex-eureka/.mvn/
+spring-cloud-vertex.iml
