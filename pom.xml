@@ -15,6 +15,7 @@
   <modules>
     <module>spring-cloud-vertex-eureka</module>
     <module>spring-cloud-vertex-client</module>
+    <module>spring-cloud-vertex-common</module>
   </modules>
 
   <properties>
@@ -29,7 +30,12 @@
     <relativePath/>
   </parent>
   <dependencies>
-
+    <!--lombok-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+    <!--lombok-->
   </dependencies>
 
   <dependencyManagement>

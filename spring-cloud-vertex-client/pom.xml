@@ -36,6 +36,11 @@
             </exclusions>
         </dependency>
         <!-- web -->
+        <dependency>
+            <groupId>org.vertex</groupId>
+            <artifactId>spring-cloud-vertex-common</artifactId>
+            <version>1.0</version>
+        </dependency>
 
     </dependencies>
 </project>
