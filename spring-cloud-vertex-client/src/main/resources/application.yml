@@ -1,11 +1,17 @@
 
-
 server:
   port: 8767
 
 spring:
   application:
     name: Eureka-Client
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/txlcn-demo?characterEncoding=UTF-8&serverTimezone=UTC
+#    username: root
+#    password: z727190113d
+#    hikari:
+#      maximum-pool-size: 20
 
 eureka:
   client:

@@ -19,6 +19,35 @@
             <artifactId>txlcn-tm</artifactId>
             <version>5.0.2.RELEASE</version>
         </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- web -->
+        <dependency>
+            <groupId>org.vertex</groupId>
+            <artifactId>spring-cloud-vertex-common</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
 
