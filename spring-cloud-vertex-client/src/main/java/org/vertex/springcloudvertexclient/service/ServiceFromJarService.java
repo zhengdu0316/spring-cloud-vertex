@@ -1,5 +1,6 @@
 package org.vertex.springcloudvertexclient.service;
 
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import org.springframework.stereotype.Service;
 import org.vertex.springcloudvertexclient.config.aop.SelfFilter;
 
@@ -11,6 +12,7 @@ import org.vertex.springcloudvertexclient.config.aop.SelfFilter;
 public class ServiceFromJarService {
 
     @SelfFilter
+    @LcnTransaction
     public String server1(){
 
         return "hello,world";
