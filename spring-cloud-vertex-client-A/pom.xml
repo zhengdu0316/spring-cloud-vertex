@@ -10,19 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.vertex</groupId>
-    <artifactId>spring-cloud-vertex-client</artifactId>
+    <artifactId>spring-cloud-vertex-client-A</artifactId>
     <version>1.0</version>
-
-
 
     <dependencies>
 
-        <!-- feign -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-        <!-- feign -->
+
         <dependency>
             <groupId>com.codingapi.txlcn</groupId>
             <artifactId>txlcn-tc</artifactId>
@@ -40,30 +33,11 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>com.lmax</groupId>-->
-            <!--<artifactId>disruptor</artifactId>-->
-            <!--<version>3.4.1</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>org.springframework.boot</groupId>-->
-                    <!--<artifactId>spring-boot-starter-logging</artifactId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
         </dependency>
-
-        <!-- pagehelper -->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>1.2.5</version>
-        </dependency>
-        <!-- pagehelper -->
         <!-- web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -108,39 +82,12 @@
         </dependency>
         <!--mybatis-generator-->
 
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2 &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-log4j2</artifactId>-->
-            <!--<version>2.1.1.RELEASE</version>-->
-        <!--</dependency>-->
-
-
+        <!-- pagehelper -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <!-- pagehelper -->
     </dependencies>
-
-    <build>
-        <plugins>
-            <!-- mybatis对象生成工具 -->
-            <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.2</version>
-                <configuration>
-                    <configurationFile>
-                        ${project.basedir}/src/main/resources/generatorConfig.xml
-                    </configurationFile>
-                    <overwrite>true</overwrite>
-                    <verbose>true</verbose>
-                </configuration>
-                <dependencies>
-                    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.30</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-        </plugins>
-    </build>
 </project>

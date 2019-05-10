@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.vertex.springcloudvertexclient.mapper.TransorderDOMapper">
+  <resultMap id="BaseResultMap" type="org.vertex.springcloudvertexclient.config.domain.entity.TransorderDO">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="trans_code" jdbcType="VARCHAR" property="transCode" />
+    <result column="trans_date" jdbcType="TIMESTAMP" property="transDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, order_id, trans_code, trans_date
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbtransorder
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbtransorder
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="org.vertex.springcloudvertexclient.config.domain.entity.TransorderDO">
+    insert into tbtransorder (id, order_id, trans_code, 
+      trans_date)
+    values (#{id,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{transCode,jdbcType=VARCHAR}, 
+      #{transDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="org.vertex.springcloudvertexclient.config.domain.entity.TransorderDO">
+    insert into tbtransorder
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="transCode != null">
+        trans_code,
+      </if>
+      <if test="transDate != null">
+        trans_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="transCode != null">
+        #{transCode,jdbcType=VARCHAR},
+      </if>
+      <if test="transDate != null">
+        #{transDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.vertex.springcloudvertexclient.config.domain.entity.TransorderDO">
+    update tbtransorder
+    <set>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="transCode != null">
+        trans_code = #{transCode,jdbcType=VARCHAR},
+      </if>
+      <if test="transDate != null">
+        trans_date = #{transDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.vertex.springcloudvertexclient.config.domain.entity.TransorderDO">
+    update tbtransorder
+    set order_id = #{orderId,jdbcType=INTEGER},
+      trans_code = #{transCode,jdbcType=VARCHAR},
+      trans_date = #{transDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

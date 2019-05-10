@@ -1,6 +1,7 @@
 package org.vertex.springcloudvertexclient.service;
 
 import com.codingapi.txlcn.tc.annotation.LcnTransaction;
+import com.codingapi.txlcn.tc.annotation.TxTransaction;
 import org.springframework.stereotype.Service;
 import org.vertex.springcloudvertexclient.config.aop.SelfFilter;
 

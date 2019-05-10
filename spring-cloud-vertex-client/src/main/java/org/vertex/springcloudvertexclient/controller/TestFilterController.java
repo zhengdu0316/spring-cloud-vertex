@@ -22,4 +22,5 @@ public class TestFilterController {
     public ResultBean filter(){
         return ResultBean.ofSuccess(serviceFromJarService.server1());
     }
+
 }

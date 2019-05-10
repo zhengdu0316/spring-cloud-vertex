@@ -1,10 +1,10 @@
 
 server:
-  port: 8767
+  port: 8768
 
 spring:
   application:
-    name: Eureka-Client
+    name: Eureka-Client-A
 #  datasource:
 #    driver-class-name: com.mysql.jdbc.Driver
 #    url: jdbc:mysql://127.0.0.1:3306/txlcn-demo?characterEncoding=UTF-8&serverTimezone=UTC
@@ -17,8 +17,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8766/eureka/
-
-
-feign:
-  hystrix:
-    enabled:  false

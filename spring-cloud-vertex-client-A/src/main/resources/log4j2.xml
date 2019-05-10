@@ -1,0 +1,46 @@
+<Configuration status="WARN">
+    <Properties>
+        <Property name="LOG_PATH">logs/</Property>
+        <Property name="LOG_PATTERN">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</Property>
+    </Properties>
+
+    <Appenders>
+
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+
+        <RollingFile name="App-File-Appender" fileName="${LOG_PATH}/vertex_client_a_log.log"
+                     filePattern="${LOG_PATH}/$${date:yyyy-MM}/$${date:dd}/vertex_client_a-%d{yyyy-MM-dd}-%i.log">
+
+            <PatternLayout>
+                <Pattern>${LOG_PATTERN}</Pattern>
+            </PatternLayout>
+
+            <Policies>
+                <!-- 每天生成一个日志文件 -->
+                <TimeBasedTriggeringPolicy modulate="true" interval="1"/>
+                <!-- 每到100M生成一个日志文件 -->
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+            </Policies>
+
+            <!-- 单天最大保存文件数 超过自动覆盖-->
+            <DefaultRolloverStrategy max="50"/>
+
+        </RollingFile>
+    </Appenders>
+
+
+    <Loggers>
+        <!--过滤掉spring和mybatis的一些无用的DEBUG信息-->
+        <logger name="org.springframework" level="warn"></logger>
+        <logger name="org.mybatis" level="warn"></logger>
+        <!--启用异步，提升性能-->
+        <AsyncLogger level="INFO" name="org.vertex.springcloudvertexclienta">
+            <AppenderRef ref="App-File-Appender"/>
+        </AsyncLogger>
+        <AsyncRoot level="INFO">
+            <AppenderRef ref="Console"/>
+        </AsyncRoot>
+    </Loggers>
+</Configuration>
