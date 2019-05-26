@@ -122,6 +122,7 @@
         <plugins>
             <!-- mybatis对象生成工具 -->
             <plugin>
+
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <version>1.3.2</version>

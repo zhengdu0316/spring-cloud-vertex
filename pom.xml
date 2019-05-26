@@ -18,7 +18,10 @@
     <module>spring-cloud-vertex-client-A</module>
     <module>spring-cloud-vertex-client-B</module>
     <module>spring-cloud-vertex-common</module>
-      <module>spring-cloud-vertex-tm</module>
+    <module>spring-cloud-vertex-tm</module>
+    <module>spring-cloud-vertex-config-server</module>
+    <module>vertex-es</module>
+      <module>spring-cloud-vertex-channel</module>
   </modules>
 
   <properties>

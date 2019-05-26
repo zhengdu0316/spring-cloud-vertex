@@ -7,7 +7,7 @@ import org.mybatis.generator.internal.DefaultCommentGenerator;
 
 /**
  * Description:
- * author: yu.hb
+ * author: zhengdu
  * Date: 2018-08-24
  */
 public class CustomerGenerator extends DefaultCommentGenerator {
