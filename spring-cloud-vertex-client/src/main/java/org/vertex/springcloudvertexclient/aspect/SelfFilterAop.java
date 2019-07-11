@@ -1,17 +1,12 @@
 package org.vertex.springcloudvertexclient.aspect;
 
-import com.oracle.tools.packager.Log;
+import com.esotericsoftware.minlog.Log;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.HttpServletRequest;
-import java.lang.reflect.Method;
+import javax.servlet.Filter;
 
 /**
  * @author zhengdu
@@ -26,7 +21,7 @@ public class SelfFilterAop {
      */
     @Around("@annotation(org.vertex.springcloudvertexclient.config.aop.SelfFilter)")
     public Object around(ProceedingJoinPoint point) throws Throwable {
-
+        Filter
         Log.info("dofilter ... ");
         return point.proceed();
     }
